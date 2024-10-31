@@ -1,8 +1,11 @@
+use anyhow::Result;
 use http::{HeaderMap, Method};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use tokio::fs;
 use url::Url;
+
+use crate::ExtraArgs;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct DiffConfig {
@@ -63,8 +66,10 @@ impl DiffConfig {
 }
 
 impl DiffProfile {
-    // pub fn diff(&self, args: DiffArgs) -> Result<String> {
-    //     let response1 = self.request1.send(args.clone())?;
-    //     let response2 = self.request2.send(args.clone())?;
-    // }
+    pub async fn diff(&self, args: ExtraArgs) -> Result<String> {
+        // let response1 = self.request1.send(args.clone())?;
+        // let response2 = self.request2.send(args.clone())?;
+
+        Ok("ok".to_string())
+    }
 }
